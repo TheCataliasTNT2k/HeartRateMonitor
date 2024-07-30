@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>HeartRateMonitor</title>
+    <style>
+        :root {
+            --base-size: 1.25em;
+            --spacing: .1em;
+        }
+
+        body, html {
+            margin: 0;
+            padding: 0;
+            height: 100%;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            font-size: var(--base-size); /* Scale the base font size */
+        }
+
+        body {
+            flex-direction: column; /* Align items vertically */
+            text-align: center; /* Center text horizontally */
+        }
+
+        a {
+            padding: 0.25em;
+        }
+
+        ul {
+            text-align: left;
+            margin-top: 0;
+        }
+    </style>
+</head>
+<body>
+<h2>Welcome!</h2>
+<h3>You have the following options:</h3>
+<a target="_blank" href='/heart_rate'>Get the actual HeartRate</a>
+<a target="_blank" href='/list_templates'>List all available templates</a>
+<a target="_blank" href='/reload_templates'>Reload all available templates</a>
+<br>
+You can connect to a websocket on /ws to receive updates without polling.
+<br>
+<br>
+<h4>Open any of the following templates:</h4>
+<ul>
+    {% for name in template_names %}
+        <li><a target="_blank" href="/template?name={{ name }}">/template?name={{ name }}</a></li>
+    {% endfor %}
+</ul>
+</body>
+</html>

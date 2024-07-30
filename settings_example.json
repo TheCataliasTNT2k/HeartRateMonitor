@@ -1,0 +1,14 @@
+{
+  "hrm_list": [
+    {
+      "name": "I am a fancy device",
+      "mac": "AA:AA:AA:AA:AA:AA"
+    }
+  ],
+  "http_port": true,
+  "http_host": "127.0.0.1",
+  "enable_http_server": true,
+  "http_template_folder": "path/to/additional/templates",
+  "enable_csv_log": true,
+  "csv_folder": "path/to/folder/to/store/csv"
+}

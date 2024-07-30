@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Current heart rate</title>
+    <meta http-equiv="Refresh" content="1">
+    <style>
+        :root {
+            --base-size: 5em;
+            --spacing: .1em;
+        }
+
+        body, html {
+            margin: 0;
+            padding: 0;
+            height: 100%;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            font-size: var(--base-size); /* Scale the base font size */
+        }
+
+        .container {
+            display: flex;
+            align-items: center;
+        }
+
+        h1 {
+            font-size: 1em; /* Relative to the base size */
+            margin: 0;
+        }
+
+        .gif {
+            width: 1em; /* Match the height of the text */
+            height: 1em; /* Ensure it's a square */
+            margin-right: var(--spacing); /* Adjust spacing between the GIF and text */
+        }
+    </style>
+</head>
+<body>
+{% if hr_disc %}
+    <h1>Disconnected</h1>
+{% endif %}
+{% if hr_val %}
+    <div class="container">
+        <img src="https://media.tenor.com/S_5CXPmzrlkAAAAi/love-you-heart.gif" alt="GIF" class="gif">
+        <h1 id="hr">{{ hr_val }}</h1>
+    </div>
+{% endif %}
+</body>
+</html>
